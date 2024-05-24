@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", Helvetica, sans-serif ;
+    color: #958676;
+}
+
+ body{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: rgb(145,246,233);
+    background: linear-gradient(135deg, rgba(145,246,233,1) 0%, rgba(31,120,117,1) 100%);
+ }
+
+ .container{
+    aspect-ratio: 1/1;
+    width: 500px;
+    background-color: #fff;
+
+    display: grid;
+    grid-template-columns: 0.65fr 0.35fr;
+    box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.404);
+ }
+
+ .left{
+    height: 80%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ .foto{
+    height: 130px;
+    width: 130px;
+    background-image: url("blackparade.jpg");
+    background-size: contain;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+ }
+
+ .foto:before{
+    content: "";
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top: -6px;
+    left: -6px;
+    border: 1px solid;
+    border-color: #165c9e #165c9e #165c9e transparent;
+    border-radius: 50%;
+    transition: all 1.5s ease-in-out;
+ }
+
+ .foto:hover:before{
+    transform: rotateZ(360deg);
+ }
+
+ .foto:after{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: -11.5px;
+    left: -11.5px;
+    border: 1px solid;
+    border-color: #165c9e transparent #165c9e #165c9e;
+    border-radius: 50%;
+    transition: all 1.5s ease-in-out;
+ }
+
+ .foto:hover:after{
+    transform: rotateZ(360deg);
+ }
+
+ .nombre{
+    text-align: center;
+    margin-bottom: 10%;
+    font-size: 1.3rem;
+ }
+
+ .links{
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 55%;
+    gap: 10%;
+    font-weight: bold;
+ }
+
+ button{
+    background: #000;
+    cursor: pointer;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+ }
+
+ button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, red, blue, deeppink, blue, red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    }
+
+    @keyframes glowing{
+        0%{
+            background-position: 0 0;
+        }
+
+        50%{
+            background-position: 400% 0;
+        }
+
+        100%{
+            background-position: 0 0;
+        }
+    }
